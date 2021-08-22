@@ -1,0 +1,27 @@
+{% extends '../base.html' %}
+
+{% block content %}
+    
+    {% if request.user.is_authenticated %}
+        <h1>Hello, {{ request.user.username }}</h1>
+    {% else %}
+        <h1>Hello, Friend</h1>
+
+    {% endif %}
+
+    <form action="{% url 'article_search' %}">
+        <input id="" type="text" name="q">
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Articles: </p>
+    <div class="container">
+        <ul>
+            {% for  x in  queryset %}
+            <li><a href="{% url 'article_detail' x.id %}" target="_blank" >{{x.title}}</a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    <a href="{% url 'article_create' %}">Create Article</a>
+{% endblock content %}
