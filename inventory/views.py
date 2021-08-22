@@ -1,4 +1,7 @@
 from django.http import HttpResponse
+import random
 
 def home(request):
-    return HttpResponse("<h1>Hello, Friend</h1>")
+    name = random.randint(10, 1213131)
+    HTML_STRING = f"<h1> Hello, {name} </h1>"
+    return HttpResponse(HTML_STRING)
