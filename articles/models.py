@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.text  import  slugify
 import datetime
 
 # Create your models here.
@@ -13,8 +12,3 @@ class Article(models.Model):
 
     def __str__(self):
         return f"{self.title}"
-
-    def save(self, *args, **kwargs):
-        if self.slug is None:
-            self.slug = slugify(self.title)
-        super().save(*args, **kwargs)
