@@ -16,7 +16,7 @@ def slugify_instance_title(instance, save=False, new_slug=None):
     # if query exists then append the count.
     if qs.exists():
         slug = f"{slug}-{random.randint(1000,99999)}"
-        return slugify_instance_title(instnace, new_slug=slug)
+        return slugify_instance_title(instance, new_slug=slug)
 
     instance.slug = slug
 
