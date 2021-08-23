@@ -3,20 +3,23 @@
 {% block content %}
 <h1>Search Results</h1>
 
+
+<form action="{% url 'article_search' %}">
+        <input id="" type="text" name="q">
+        <input type="submit" value="Submit">
+    </form>
+
 {% if obj %}
-    <ul>
+    <ol>
     {% for x in obj %}
         <li>
-            <h1>{{ x.title }}</h1>
+            <h1><a href="{{x.get_absolute_url}}" >{{ x.title }}</a></h1>
             <p>{{ x.content }}</p>
         </li>
     {% endfor %}
-    </ul>
+    </ol>
         
 {% else %}
     <h3>Obj Doesnt Exist</h3>
 {% endif %}
-    <a href="{% url 'home' %}">
-        <p>Go home</p>
-    </a>
 {% endblock content %}

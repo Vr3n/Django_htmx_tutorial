@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.db.models import Q
 from django.template.loader import render_to_string
 from django.contrib.auth.decorators import login_required
 
@@ -29,8 +28,7 @@ def article_detail(request, slug):
 
 def article_search_view(request, *args, **kwargs):
     search_key = request.GET.get('q')
-    queryset = Article.objects.filter(title__contains=str(search_key))
-
+    queryset = Article.objects.search(search_key)
     context = {}
 
     if queryset.exists():
