@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Inventory</title>
+    <style>
+        .nav {
+            display: flex;
+        }
+    </style>
 </head>
 <body>
 
-{% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">
-        <p>Logut!</p>
-    </a>
-{% endif %}
+<nav class="nav">
+    
+            <a href="{% url 'home' %}">Home</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}">
+                    Logut!
+                </a>
+            {% endif %}
+</nav>
+
     
     {% block content %}
     {% endblock content %}

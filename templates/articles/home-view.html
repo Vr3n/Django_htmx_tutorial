@@ -18,7 +18,7 @@
     <div class="container">
         <ul>
             {% for  x in  queryset %}
-            <li><a href="{% url 'article_detail' x.id %}" target="_blank" >{{x.title}}</a></li>
+            <li><a href="{% url 'article_detail' x.slug %}" target="_blank" >{{x.title}}</a></li>
             {% endfor %}
         </ul>
 

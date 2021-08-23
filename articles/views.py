@@ -21,8 +21,8 @@ def home(request):
     return render(request, 'articles/home-view.html', context)
 
 @login_required
-def article_detail(request, id):
-    queryset = Article.objects.get(id=id)
+def article_detail(request, slug):
+    queryset = Article.objects.get(slug=slug)
     context = {"obj": queryset}
     return render(request, "articles/article-detail.html", context)
 
