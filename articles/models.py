@@ -5,7 +5,7 @@ import datetime
 class Article(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
-    slug = models.SlugField(blank=True, null=True)
+    slug = models.SlugField(unique=True,blank=True, null=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     publish_date = models.DateField(auto_now_add=False, auto_now=False, null=True, blank=True)
