@@ -7,8 +7,12 @@ User = auth.get_user_model()
 
 class RecipeIngredientInline(admin.StackedInline):
     model = RecipeIngredient
-    # fields = ['name', 'quantity', 'unit', 'description']
+    fields = ['name', 'quantity', 'unit', 'description']
+    readonly_fields = ['quantity_in_float', 'as_mks', "as_imperial"]
     extra = 1
+
+class RecipeIngredientAdmin(admin.ModelAdmin):
+    readonly_fields = ['quantity_in_float', 'as_mks', "as_imperial"]
 
 
 class RecipeAdmin(admin.ModelAdmin):
@@ -18,4 +22,4 @@ class RecipeAdmin(admin.ModelAdmin):
     raw_id_fields= ['user']
 
 admin.site.register(Recipe, RecipeAdmin)
-admin.site.register(RecipeIngredient)
+admin.site.register(RecipeIngredient, RecipeIngredientAdmin)
