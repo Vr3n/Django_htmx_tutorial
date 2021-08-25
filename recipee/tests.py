@@ -51,3 +51,9 @@ class RecipeTestCase(TestCase):
         qs = RecipeIngredient.objects.filter(recipe=recipe)
         print(qs)
         self.assertEqual(qs.count(), 1)
+
+    def test_user_two_level_relation(self):
+        user = self.user_a
+        qs = RecipeIngredient.objects.filter(recipe__user=user)
+        print(qs)
+        self.assertEqual(qs.count(), 1)

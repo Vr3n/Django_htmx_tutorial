@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils import timezone
 
+from .validators import validate_unit_of_measure
+
 
 # Create your models here.
 
@@ -34,7 +36,8 @@ class RecipeIngredient(models.Model):
     name = models.CharField(max_length=250)
     description = models.TextField(blank=True, null=True)
     quantity = models.CharField(max_length=10)
-    unit = models.CharField(max_length=10)
+    # valid unit measurements -> [ "pounds", 'lbs', 'oz', 'gram']
+    unit = models.CharField(max_length=10, validators=[validate_unit_of_measure])
     direction = models.TextField(null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=timezone.now)
     updated_on = models.DateTimeField(auto_now=timezone.now)
