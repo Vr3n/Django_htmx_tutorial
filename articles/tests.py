@@ -68,3 +68,10 @@ class ArticleTestCase(TestCase):
 
         for obj in qs:
             self.assertNotEqual(user_slug, obj.slug)
+
+
+    def article_search_manager(self):
+        qs = Article.objects.search(query='Hello')
+        self.assertEqual(qs.count(), self.number_of_articles)
+        qs = Article.objects.search(query='testing')
+        self.assertEqual(qs.count(), self.number_of_articles)
