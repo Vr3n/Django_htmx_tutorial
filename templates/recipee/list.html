@@ -1,0 +1,29 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+    <h1>Recipes</h1>
+
+    {% if request.user.is_authenticated %}
+        <h1>Hello, {{ request.user.username }}</h1>
+    {% else %}
+        <h1>Hello, Friend</h1>
+
+    {% endif %}
+
+    <form action="{% url 'recipes:search' %}">
+        <input id="" type="text" name="q">
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="{% url 'recipes:create' %}">Create Recipe</a>
+    <div class="container">
+        <ul>
+            {% for  x in  obj %}
+            <li><a href="{{ x.get_absolute_url }}" target="_blank" >{{x.name}} by <small>{{ x.user.username }}</small></a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+
+{% endblock content %}    

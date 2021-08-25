@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+
+{% block content %}
+<h1>{{ obj.name }}</h1> &nbsp; <small>{{ obj.user.username }}</small>
+
+{% if request.user == obj.user %}
+<h4><a href="{{ obj.get_update_url }}">Edit</a></h4>
+{% endif %}
+<p>{{ obj.description }}</p>
+<p>{{ obj.directions }}</p>
+
+<h3>Ingredients</h3>
+<br> 
+{% for ingredient in obj.get_ingredients_children %}
+<h4>{{ ingredient.name }}</h4> 
+<p>Imperial (pounds): {{ ingredient.as_imperial }}</p>
+<p>Kg: {{ ingredient.as_mks }}</p>
+
+{% endfor %}
+
+{% endblock content %}

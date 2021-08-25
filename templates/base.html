@@ -17,6 +17,10 @@
             &nbsp;
             &nbsp;
             &nbsp;
+            <a href="{% url 'recipes:list' %}">Recipes</a>
+            &nbsp;
+            &nbsp;
+            &nbsp;
             {% if request.user.is_authenticated %}
                 <a href="{% url 'logout' %}">
                     Logut!

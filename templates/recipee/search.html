@@ -1,0 +1,25 @@
+{% extends '../base.html' %} 
+
+{% block content %}
+<h1>Search Results</h1>
+
+
+<form action="{% url 'recipes:search' %}">
+        <input id="" type="text" name="q">
+        <input type="submit" value="Submit">
+    </form>
+
+{% if obj %}
+    <ol>
+    {% for x in obj %}
+        <li>
+            <h1><a href="{{x.get_absolute_url}}" >{{ x.name }}</a></h1>
+            <small>{{ x.user.username }}</small>
+        </li>
+    {% endfor %}
+    </ol>
+        
+{% else %}
+    <h3>Obj Doesnt Exist</h3>
+{% endif %}
+{% endblock content %}
