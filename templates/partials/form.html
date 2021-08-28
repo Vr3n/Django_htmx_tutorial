@@ -10,11 +10,7 @@
     {% csrf_token %}
     {{form.as_p}}
 
-    {% if form_2 %}
-        <h3>Ingredients</h3>
-        {{ form_2.as_p }}
-    {% endif %}
-
     <button type="submit">Save Recipe</button>
+    <div class="htmx-indicator">Loading</div>
 </form>
 

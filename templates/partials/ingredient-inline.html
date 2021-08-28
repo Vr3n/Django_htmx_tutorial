@@ -1,0 +1,10 @@
+<div id="ingredient-{{object.id}}">
+  {{ ingredient.name }} - {{ ingredient.quantity }} {{ ingredient.unit }}
+  <button
+    hx-trigget="click"
+    hx-get="{{ object.get_update_url }}"
+    hx-target="ingredient-{{object.id}}"
+  >
+    Edit
+  </button>
+</div>

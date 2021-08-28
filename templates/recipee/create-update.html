@@ -1,7 +1,12 @@
-{% extends '../base.html' %}
-
+{% extends '../base.html' %} 
 
 {% block content %}
     <h1>Create new Recipe</h1>
     {% include 'partials/form.html' %}
+
+    <h3>Ingredients</h3>
+
+    {% for ingredient in object.get_ingredients_children %}
+        {% include 'partials/ingredient-inline.html' with object=ingredient %}
+    {% endfor %}
 {% endblock content %}

@@ -33,23 +33,14 @@ def recipe_detail_view(request, id):
 def recipe_update_view(request, id=None):
     recipe_instance = get_object_or_404(Recipe, id=id, user=request.user)
     form = RecipeForm(request.POST or None, instance=recipe_instance)
-    form_2 = RecipeIngredientForm(request.POST or None)
-    RecipeIngredientFormset = modelformset_factory(RecipeIngredient, form=RecipeIngredientForm, extra=1)
-
-    qs = recipe_instance.recipeingredient_set.filter()
-    formset = RecipeIngredientFormset(request.POST or None, queryset=qs)
 
     context = {}
     context['form'] = form
-    context['form_2'] = formset
+    context['object'] = recipe_instance
 
-    if form.is_valid() and formset.is_valid():
+    if form.is_valid():
         recipe_instance = form.save()
-        for form in formset:
-            ingredient = form.save(commit=False)
-            ingredient.recipe = recipe_instance
-            ingredient.save()
-            messages.success(request, "Recipe was updated successfully")
+        messages.success(request, "Recipe Updated successfully")
 
     if form.is_valid() != True:
         messages.error(request, form.errors)
@@ -111,3 +102,47 @@ def recipe_search_view(request, id):
         'obj': obj
     }
     return render(request, "recipee/search.html", context)
+
+@login_required
+def recipe_ingredient_detail_hx_view(request, parent_id=None,id=None):
+    if not request.htmx:
+        raise Http404
+    try:
+        obj = Recipe.objects.get(id=parent_id, user=request.user)
+    except:
+        obj = None
+
+    if obj is None:
+        return HttpResponse("Recipe Not Found")
+
+    if obj is None:
+        return HttpResponse("Not Found.")
+
+    instance = None
+
+    if id is not None: 
+        try:
+            instance = RecipeIngredient.objects.get(recipe=parent_id, id=id)
+        except:
+            instance = None
+
+    form = RecipeIngredientForm(request.POST or None, instance=instance)
+    context = {
+        'object': instance,
+        'form': form
+    }
+
+    url = instance.get_hx_edit_url() if instance else reverse('recipes:hx-ingredient-new', kwargs={
+        "id": obj.id
+    })
+
+    if form.is_valid():
+        new_obj = form.save(commit=False)
+
+        if instance is None:
+            new_obj.recipe = obj
+        new_obj.save()
+        context['object'] = context
+        return render(request, "partials/ingredient-form.html", context)
+
+    return render(request, "partials/ingredient-inline.html", context)

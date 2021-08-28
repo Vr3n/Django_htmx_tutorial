@@ -76,6 +76,13 @@ class RecipeIngredient(models.Model):
         measurement = self.convert_to_system(system="imperial")
         return measurement.to_base_units()
 
+    def get_update_url(self):
+        kwargs = {
+            "parent_id": self.recipe.id,
+            "id": self.id
+        }
+        return reverse("recipes:hx-ingredient-detail", kwargs=kwargs)
+
     def __str__(self):
         return f"{self.name} - {self.recipe}"
 
