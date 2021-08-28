@@ -1,0 +1,6 @@
+<h5>Searched For {{request.GET.q}} under {{ request.GET.type|title }} </h5>
+{% for object in queryset %}
+    <li><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></li>
+{% empty %}
+    <p>No results found</p>
+{% endfor %}
