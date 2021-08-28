@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from search.views import search_view
+from books.views import create_book, create_book_form, book_detail_view, update_book
 
 urlpatterns = [
     path('', include('articles.urls')),
@@ -24,4 +25,8 @@ urlpatterns = [
     path("pantry/recipes/", include('recipee.urls')),
     path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
+    path('<int:pk>/', create_book, name="create-book"),
+    path('book/<int:pk>/', book_detail_view, name="detail-book"),
+    path('book/<int:pk>/update/', update_book, name="update-book"),
+    path('htmx/create-book-form/', create_book_form, name="create-book-form"),
 ]

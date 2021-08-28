@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <h1>Create books for {{ author.name }}</h1>
+
+    <button type="button" hx-get="{% url 'create-book-form' %}" hx-target="#bookforms" hx-swap="beforeend" >Add form</button>
+
+    <div id="bookforms"></div>
+
+    <hr>
+
+    <h1>Books written by {{ author.name }}</h1>
+    
+    {% for book in books %}
+        {% include 'partials/book_detail.html' with book=book %}
+    {% endfor %}
+        
+{% endblock content %}

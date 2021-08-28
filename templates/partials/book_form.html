@@ -1,0 +1,14 @@
+
+<form hx-post="." method="post" hx-target="this" hx-swap="outerHTML">
+    {% csrf_token %}
+    {{ form }}
+    
+    {% if book %}
+        <button type="submit" hx-post="{% url 'update-book' book.id %}" >Update</button>
+
+    {% else %}
+        <button type="submit" hx-post=".">Submit</button>
+
+    {% endif %}
+     <small class="htmx-indicator">Loading...</small>   
+</form>

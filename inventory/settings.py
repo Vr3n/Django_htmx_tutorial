@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     "django_htmx",
     "articles.apps.ArticlesConfig",
     "recipee.apps.RecipeeConfig",
-    "search"
+    "search",
+    "books"
 ]
 
 MIDDLEWARE = [
