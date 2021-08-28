@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import HttpResponse,render, redirect, get_object_or_404
 from django.contrib import messages
 from .forms import BookFormSet, BookForm
 from .models import Author, Book
@@ -55,3 +55,10 @@ def book_detail_view(request, pk):
         "book": book
     }
     return render(request, "partials/book_detail.html", context)
+
+def book_delete_view(request, pk):
+    if request.method == "POST":
+        book = get_object_or_404(Book, pk=pk)
+        book_name = book.title
+        book.delete()
+        return HttpResponse(f"{book_name} Deleted successfully")

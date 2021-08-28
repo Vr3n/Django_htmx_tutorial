@@ -1,15 +1,20 @@
-
-<div hx-target="#book-{{ book.id }}" id="book-{{book.id}}"  hx-swap="outerHTML">
-{% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-{% endif %}
-    <span>Book Name: <b>{{ book.title }}</b></span>&nbsp; -
-    <span>Number of pages: <b>{{ book.number_of_pages }}</b></span>&nbsp;
-    <button hx-get="{% url 'update-book' book.id %}" hx-target="#book-{{ book.id }}" hx-swap="outerHTML" >Update
-    </button>
-    <small class="htmx-indicator">Loading...</small>
+<div hx-target="#book-{{ book.id }}" id="book-{{book.id}}" hx-swap="outerHTML">
+  <span>Book Name: <b>{{ book.title }}</b></span
+  >&nbsp; - <span>Number of pages: <b>{{ book.number_of_pages }}</b></span
+  >&nbsp;
+  <button
+    hx-get="{% url 'update-book' book.id %}"
+    hx-target="#book-{{ book.id }}"
+    hx-swap="outerHTML"
+  >
+    Update
+  </button>
+  <button
+    hx-post="{% url 'delete-book' book.id %}"
+    style="background-color: red; color: white"
+    hx-confirm="Are you sure you want to delete?"
+  >
+    Delete
+  </button>
+  <small class="htmx-indicator">Loading...</small>
 </div>

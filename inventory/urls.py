@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from search.views import search_view
-from books.views import create_book, create_book_form, book_detail_view, update_book
+from books.views import create_book, create_book_form, book_detail_view, update_book, book_delete_view
 
 urlpatterns = [
     path('', include('articles.urls')),
@@ -28,5 +28,6 @@ urlpatterns = [
     path('<int:pk>/', create_book, name="create-book"),
     path('book/<int:pk>/', book_detail_view, name="detail-book"),
     path('book/<int:pk>/update/', update_book, name="update-book"),
+    path('book/<int:pk>/delete/', book_delete_view, name="delete-book"),
     path('htmx/create-book-form/', create_book_form, name="create-book-form"),
 ]
