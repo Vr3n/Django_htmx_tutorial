@@ -1,5 +1,5 @@
 import pdb 
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import reverse, render, redirect, get_object_or_404, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import Http404
@@ -23,9 +23,9 @@ def recipe_list_view(request):
 
 @login_required
 def recipe_detail_view(request, id):
-    qs = get_object_or_404(Recipe, id=id)
+    hx_url = reverse('recipes:hx-detail', kwargs={"id": id})
     context = {
-        'obj': qs
+        'hx_url': hx_url
     }
     return render(request, "recipee/detail.html", context)
 
@@ -79,12 +79,35 @@ def recipe_create_view(request):
 
 
 @login_required
-def recipe_search_view(request, *args, **kwargs):
-    search_key = request.GET.get('q')
-    queryset = Recipe.objects.filter(name__icontains=search_key)
-    context = {}
+def recipe_detail_hx_view(request, id):
 
-    if queryset.exists():
-        context = {"obj": queryset}
+    try:
+        obj = Recipe.objects.get(id=id)
+    except:
+        obj = None
+    
+    if obj is None:
+        return HttpResponse("Recipe Not Found")
 
-    return render(request, "recipee/search.html", context=context)
+
+    context = {
+        'obj': obj
+    }
+    return render(request, "partials/detail.html", context)
+
+@login_required
+def recipe_search_view(request, id):
+
+    try:
+        obj = Recipe.objects.get(id=id)
+    except:
+        obj = None
+    
+    if obj is None:
+        return HttpResponse("Recipe Not Found")
+
+
+    context = {
+        'obj': obj
+    }
+    return render(request, "recipee/search.html", context)

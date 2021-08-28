@@ -1,0 +1,337 @@
+[
+{
+    "model": "recipee.recipe",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "name": "Palak Panner",
+        "description": "the dish with palak and paneer",
+        "directions": "left right front back",
+        "active": true,
+        "created_on": "2021-08-27T16:33:23.517Z",
+        "updated_on": "2021-08-27T16:33:23.517Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "name": "Htmx shwarma",
+        "description": "Shwarma saved with htmx",
+        "directions": "sprinkle some hx-post and see the magic",
+        "active": true,
+        "created_on": "2021-08-28T05:39:34.552Z",
+        "updated_on": "2021-08-28T05:40:28.554Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "name": "Django Paneer",
+        "description": "oafkok",
+        "directions": "awpok",
+        "active": true,
+        "created_on": "2021-08-28T05:41:38.986Z",
+        "updated_on": "2021-08-28T05:48:31.928Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 4,
+    "fields": {
+        "user": 1,
+        "name": "python soup",
+        "description": "soup",
+        "directions": "siofjeioj",
+        "active": true,
+        "created_on": "2021-08-28T05:48:54.125Z",
+        "updated_on": "2021-08-28T05:49:04.241Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "name": "Java pulao",
+        "description": "ioajfioajf",
+        "directions": "IISONMVFAIOWM",
+        "active": true,
+        "created_on": "2021-08-28T05:50:25.353Z",
+        "updated_on": "2021-08-28T05:50:25.353Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 6,
+    "fields": {
+        "user": 1,
+        "name": "Chicken Biryani",
+        "description": "vskldf",
+        "directions": "esvckmel",
+        "active": true,
+        "created_on": "2021-08-28T06:12:53.869Z",
+        "updated_on": "2021-08-28T06:12:53.869Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 7,
+    "fields": {
+        "user": 1,
+        "name": "Partial",
+        "description": "iajio",
+        "directions": "vosiosj",
+        "active": true,
+        "created_on": "2021-08-28T06:16:42.933Z",
+        "updated_on": "2021-08-28T06:16:42.933Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 8,
+    "fields": {
+        "user": 1,
+        "name": "Partial",
+        "description": "iajio",
+        "directions": "vosiosj",
+        "active": true,
+        "created_on": "2021-08-28T06:18:04.319Z",
+        "updated_on": "2021-08-28T06:18:04.319Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 9,
+    "fields": {
+        "user": 1,
+        "name": "aiofjo",
+        "description": "ovijo",
+        "directions": "ivoj",
+        "active": true,
+        "created_on": "2021-08-28T06:39:10.983Z",
+        "updated_on": "2021-08-28T06:39:10.983Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 10,
+    "fields": {
+        "user": 1,
+        "name": "Abc",
+        "description": "acom",
+        "directions": "ewfo",
+        "active": true,
+        "created_on": "2021-08-28T06:44:31.525Z",
+        "updated_on": "2021-08-28T06:44:31.525Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 11,
+    "fields": {
+        "user": 1,
+        "name": "acsa",
+        "description": "fef",
+        "directions": "efwe",
+        "active": true,
+        "created_on": "2021-08-28T07:51:58.824Z",
+        "updated_on": "2021-08-28T07:51:58.824Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 12,
+    "fields": {
+        "user": 1,
+        "name": "avasfa",
+        "description": "vawef",
+        "directions": "svefok",
+        "active": true,
+        "created_on": "2021-08-28T07:52:44.821Z",
+        "updated_on": "2021-08-28T07:52:44.821Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 13,
+    "fields": {
+        "user": 1,
+        "name": "DJanoa",
+        "description": "efvpowk",
+        "directions": "GOPK",
+        "active": true,
+        "created_on": "2021-08-28T07:55:10.063Z",
+        "updated_on": "2021-08-28T07:55:10.063Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 14,
+    "fields": {
+        "user": 1,
+        "name": "DJanoa",
+        "description": "efvpowk",
+        "directions": "GOPK",
+        "active": true,
+        "created_on": "2021-08-28T07:56:52.832Z",
+        "updated_on": "2021-08-28T07:56:52.832Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 15,
+    "fields": {
+        "user": 1,
+        "name": "DJanoa",
+        "description": "efvpowk",
+        "directions": "GOPK",
+        "active": true,
+        "created_on": "2021-08-28T07:56:59.303Z",
+        "updated_on": "2021-08-28T07:56:59.303Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 16,
+    "fields": {
+        "user": 1,
+        "name": "DJanoa",
+        "description": "efvpowk",
+        "directions": "GOPK",
+        "active": true,
+        "created_on": "2021-08-28T07:57:01.813Z",
+        "updated_on": "2021-08-28T07:57:01.813Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 17,
+    "fields": {
+        "user": 1,
+        "name": "Anc",
+        "description": "capl",
+        "directions": "awpodka",
+        "active": true,
+        "created_on": "2021-08-28T07:59:12.505Z",
+        "updated_on": "2021-08-28T07:59:12.505Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 18,
+    "fields": {
+        "user": 1,
+        "name": "Dunmmger",
+        "description": "apofkpk",
+        "directions": "fwepofk",
+        "active": true,
+        "created_on": "2021-08-28T08:05:45.029Z",
+        "updated_on": "2021-08-28T08:05:45.029Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 19,
+    "fields": {
+        "user": 1,
+        "name": "afwfaw",
+        "description": "afa",
+        "directions": "fewfqw",
+        "active": true,
+        "created_on": "2021-08-28T08:06:25.629Z",
+        "updated_on": "2021-08-28T08:06:25.629Z"
+    }
+},
+{
+    "model": "recipee.recipe",
+    "pk": 20,
+    "fields": {
+        "user": 1,
+        "name": "apsmcm",
+        "description": "pfoaskmpo",
+        "directions": "epofk",
+        "active": true,
+        "created_on": "2021-08-28T08:36:58.830Z",
+        "updated_on": "2021-08-28T08:36:58.830Z"
+    }
+},
+{
+    "model": "recipee.recipeingredient",
+    "pk": 1,
+    "fields": {
+        "recipe": 2,
+        "name": "Htmx",
+        "description": null,
+        "quantity": "2",
+        "quantity_in_float": 2.0,
+        "unit": "pounds",
+        "direction": null,
+        "created_on": "2021-08-28T05:40:28.566Z",
+        "updated_on": "2021-08-28T05:40:28.566Z"
+    }
+},
+{
+    "model": "recipee.recipeingredient",
+    "pk": 2,
+    "fields": {
+        "recipe": 3,
+        "name": "paneer",
+        "description": null,
+        "quantity": "2",
+        "quantity_in_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "created_on": "2021-08-28T05:43:42.008Z",
+        "updated_on": "2021-08-28T05:43:42.008Z"
+    }
+},
+{
+    "model": "recipee.recipeingredient",
+    "pk": 3,
+    "fields": {
+        "recipe": 3,
+        "name": "paneer",
+        "description": null,
+        "quantity": "2",
+        "quantity_in_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "created_on": "2021-08-28T05:48:24.146Z",
+        "updated_on": "2021-08-28T05:48:24.146Z"
+    }
+},
+{
+    "model": "recipee.recipeingredient",
+    "pk": 4,
+    "fields": {
+        "recipe": 3,
+        "name": "paneer",
+        "description": null,
+        "quantity": "2",
+        "quantity_in_float": 2.0,
+        "unit": "kg",
+        "direction": null,
+        "created_on": "2021-08-28T05:48:31.937Z",
+        "updated_on": "2021-08-28T05:48:31.937Z"
+    }
+},
+{
+    "model": "recipee.recipeingredient",
+    "pk": 5,
+    "fields": {
+        "recipe": 4,
+        "name": "",
+        "description": null,
+        "quantity": "",
+        "quantity_in_float": 0.0,
+        "unit": "",
+        "direction": null,
+        "created_on": "2021-08-28T05:49:04.253Z",
+        "updated_on": "2021-08-28T05:49:04.253Z"
+    }
+}
+]

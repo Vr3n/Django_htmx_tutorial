@@ -39,6 +39,11 @@ class Recipe(models.Model):
     def get_update_url(self):
         return reverse('recipes:update', kwargs={ 'id': self.id })
 
+    def get_hx_url(self):
+        return reverse('recipes:hx-detail', kwargs={
+            "id": self.id
+        })
+
     def get_ingredients_children(self):
         return self.recipeingredient_set.all()
 
@@ -65,12 +70,10 @@ class RecipeIngredient(models.Model):
 
     def as_mks(self):
         measurement = self.convert_to_system(system="mks")
-        print("mks: ", measurement)
         return measurement.to_base_units()
 
     def as_imperial(self):
         measurement = self.convert_to_system(system="imperial")
-        print("imperial: ", measurement)
         return measurement.to_base_units()
 
     def __str__(self):
