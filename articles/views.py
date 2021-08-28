@@ -11,11 +11,9 @@ import random
 
 
 def home(request):
-    random_id = random.randint(1, 4)
-    article_obj = Article.objects.get(id=random_id)
     queryset = Article.objects.filter()
 
-    context = {"article_obj": article_obj, "queryset": queryset}
+    context = { "queryset": queryset}
 
     return render(request, 'articles/home-view.html', context)
 

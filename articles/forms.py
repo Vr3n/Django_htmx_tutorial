@@ -7,7 +7,7 @@ class ArticleForm(forms.ModelForm):
     class Meta:
         model = Article
         fields = "__all__"
-    
+
     # def clean(self):
     #     data = self.cleaned_data
     #     title = data.get('title')
